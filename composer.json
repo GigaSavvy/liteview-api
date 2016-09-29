@@ -12,15 +12,20 @@
     "autoload": {
         "psr-4": {
             "Liteview\\": "src/Liteview"
-        }
+        },
+        "files": [
+            "src/Liteview/Support/helpers.php"
+        ]
     },
-    "autload-dev": {
+    "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
         ]
     },
     "require": {
-        "php": ">=5.6"
+        "php": ">=5.6",
+        "guzzlehttp/guzzle": "^6.2",
+        "samrap/gestalt": "0.3.x-dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.5",
