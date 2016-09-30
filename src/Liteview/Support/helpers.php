@@ -29,9 +29,7 @@ if (! function_exists('array_to_xml')) {
                     $subnode = $xml->addChild($element);
                     array_to_xml($value, $subnode);
                 } else {
-                    // We will assume non-associative arrays to represent multiple
-                    // child elements with the same name and recursively add
-                    // those elements to the current XML node.
+                    // Fast enough.
                     while (count($value) > 0) {
                         array_to_xml([$element => array_shift($value)], $xml);
                     }
