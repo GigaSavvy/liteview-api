@@ -3,3 +3,4 @@ composer.lock
 VagrantFile
 .vagrant/
 *.sublime-*
+.sandbox.ini
