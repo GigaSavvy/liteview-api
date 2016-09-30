@@ -1,5 +1,18 @@
 <?php
 
+if (! function_exists('is_assoc')) {
+    /**
+     * Determine if the given array is considered associative.
+     *
+     * @param array $array
+     * @return boolean
+     */
+    function is_assoc(array $array)
+    {
+        return count(array_filter(array_keys($array), 'is_string')) > 0;
+    }
+}
+
 if (! function_exists('array_to_xml')) {
     /**
      * Convert the given array to an XML string.
@@ -12,8 +25,17 @@ if (! function_exists('array_to_xml')) {
     {
         foreach ($data as $element => $value) {
             if (is_array($value)) {
-                $subnode = $xml->addChild($element);
-                array_to_xml($value, $subnode);
+                if (is_assoc($value)) {
+                    $subnode = $xml->addChild($element);
+                    array_to_xml($value, $subnode);
+                } else {
+                    // We will assume non-associative arrays to represent multiple
+                    // child elements with the same name and recursively add
+                    // those elements to the current XML node.
+                    while (count($value) > 0) {
+                        array_to_xml([$element => array_shift($value)], $xml);
+                    }
+                }
             } else {
                 $xml->addChild($element, $value);
             }
