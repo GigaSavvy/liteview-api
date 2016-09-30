@@ -1,6 +1,6 @@
 # Liteview API
 
-[![StyleCI](https://styleci.io/repos/69515926/shield?branch=master)](https://styleci.io/repos/69515926)
+[![StyleCI](https://styleci.io/repos/69515926/shield?style=flat&branch=master)](https://styleci.io/repos/69515926)
 [![Build Status](https://travis-ci.org/GigaSavvy/liteview-api.svg?branch=master)](https://travis-ci.org/GigaSavvy/liteview-api)
 [![Latest Stable Version](https://poser.pugx.org/gigasavvy/liteview-api/v/stable)](https://packagist.org/packages/gigasavvy/liteview-api)
 [![Total Downloads](https://poser.pugx.org/gigasavvy/liteview-api/downloads)](https://packagist.org/packages/gigasavvy/liteview-api)
