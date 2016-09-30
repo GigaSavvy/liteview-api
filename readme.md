@@ -29,7 +29,6 @@ $connection = new Connection('username', 'key');
 Behind the scenes, an HTTP client is created with the proper headers and data needed to successfully access the API. To make calls to the API, simply call the supported HTTP verbs as methods of the Connection class. The first parameter is the resource URI to access. The second (optional) parameter is the body to send with the request. This should be a valid XML string.
 
 ```php
-
 // Get all supported order methods.
 $orderResponse = $connection->get('order/methods');
 
@@ -70,6 +69,8 @@ With this flexibility we can define our XML once and modify it at runtime withou
 
 The Liteview API package defines some global helper functions that may be used as well.
 
+---
+
 ```php
 string array_to_xml(array $data, SimpleXMLElement &$xml)
 ```
@@ -91,6 +92,8 @@ bool is_assoc(array $arr)
 ```
 
 **is_assoc()** takes an array and determines whether it is associative or not.
+
+---
 
 ### Conclusion
 
