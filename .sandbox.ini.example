@@ -1,0 +1,11 @@
+; This is an example .ini file for configuring API credentials for running tests.
+; In order to run the entire API connection test suite, copy this file to
+; .sandbox.ini and configure the username and key. If this file is not
+; copied to .sandbox.ini, the physical connection tests will be
+; ignored, but all other tests will still run as expected.
+
+; The Liteview API username.
+username = sam
+
+; The Liteview API key.
+appkey = angostura

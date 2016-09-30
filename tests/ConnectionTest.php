@@ -50,6 +50,27 @@ class ConnectionTest extends TestCase
         $this->assertContains($connection->getUsername(), $uri->getPath());
     }
 
+    public function test_real_api_connection()
+    {
+        $ini = __DIR__.'/../.sandbox.ini';
+        if (file_exists($ini)) {
+            $creds = parse_ini_file($ini);
+            $connection = new Connection($creds['username'], $creds['appkey']);
+
+            $this->assertContains(
+                '<shipping_methods>',
+                $connection->get('order/methods')->getBody()->getContents()
+            );
+        }
+    }
+
+    /**
+     * Get a mocked request handler and accept a container for catching requests.
+     *
+     * @param  array  $responses
+     * @param  array  &$container
+     * @return \Liteview\Connection
+     */
     protected function getMockConnection(array $responses, array &$container = [])
     {
         $handler = HandlerStack::create(new MockHandler($responses));
