@@ -4,12 +4,12 @@ if (! function_exists('is_assoc')) {
     /**
      * Determine if the given array is considered associative.
      *
-     * @param array $array
+     * @param array $arr
      * @return boolean
      */
-    function is_assoc(array $array)
+    function is_assoc(array $arr)
     {
-        return count(array_filter(array_keys($array), 'is_string')) > 0;
+        return count(array_filter(array_keys($arr), 'is_string')) > 0;
     }
 }
 
