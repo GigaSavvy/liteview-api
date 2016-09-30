@@ -4,8 +4,8 @@ if (! function_exists('is_assoc')) {
     /**
      * Determine if the given array is considered associative.
      *
-     * @param array $arr
-     * @return boolean
+     * @param array $array
+     * @return bool
      */
     function is_assoc(array $arr)
     {
