@@ -14,7 +14,7 @@ class ResourceLoader implements LoaderInterface
     protected $filename;
 
     /**
-     * Create a new instance of Liteview\Api\Resources\ResourceLoader
+     * Create a new instance of Liteview\Api\Resources\ResourceLoader.
      *
      * @param string $filename
      */
