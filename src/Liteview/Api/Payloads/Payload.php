@@ -1,12 +1,12 @@
 <?php
 
-namespace Liteview\Api\Resources;
+namespace Liteview\Api\Payloads;
 
 use SimpleXMLElement;
 use Gestalt\Configuration;
-use Liteview\Api\Contracts\ResourceContract;
+use Liteview\Api\Contracts\PayloadContract;
 
-class Resource extends Configuration implements ResourceContract
+class Payload extends Configuration implements PayloadContract
 {
     /**
      * The base data for the XML object.

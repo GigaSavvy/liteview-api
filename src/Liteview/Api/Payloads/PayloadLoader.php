@@ -1,10 +1,10 @@
 <?php
 
-namespace Liteview\Api\Resources;
+namespace Liteview\Api\Payloads;
 
 use Gestalt\Loaders\LoaderInterface;
 
-class ResourceLoader implements LoaderInterface
+class PayloadLoader implements LoaderInterface
 {
     /**
      * The filename to load the XML schema from.
@@ -14,7 +14,7 @@ class ResourceLoader implements LoaderInterface
     protected $filename;
 
     /**
-     * Create a new instance of Liteview\Api\Resources\ResourceLoader.
+     * Create a new instance of Liteview\Api\Payloads\PayloadLoader.
      *
      * @param string $filename
      */
