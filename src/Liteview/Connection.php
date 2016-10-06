@@ -85,9 +85,9 @@ class Connection implements LiteviewMethodContract
      * @param  string $body
      * @return \GuzzleHttp\Psr7\Response
      */
-    public function get($resource, $body = null)
+    public function get($resource, $body = null, $params = [])
     {
-        return $this->send($this->prepare('GET', $resource, $body));
+        return $this->send($this->prepare('GET', $resource, $body, $params));
     }
 
     /**
@@ -97,9 +97,9 @@ class Connection implements LiteviewMethodContract
      * @param  string $body
      * @return \GuzzleHttp\Psr7\Response
      */
-    public function post($resource, $body = null)
+    public function post($resource, $body = null, $params = [])
     {
-        return $this->send($this->prepare('POST', $resource, $body));
+        return $this->send($this->prepare('POST', $resource, $body, $params));
     }
 
     /**
@@ -127,10 +127,14 @@ class Connection implements LiteviewMethodContract
      * @param  string $body
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function prepare($method, $resource, $body)
+    protected function prepare($method, $resource, $body, $params)
     {
         // Append the username parameter to the end of every resource URI.
         $resource = trim($resource, '/').'/'.$this->username;
+
+        foreach ($params as $param) {
+            $resource.='/'.$param;
+        }
 
         return new Request($method, $resource, [], $body);
     }

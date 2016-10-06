@@ -11,7 +11,7 @@ interface MethodContract
      * @param  string $body
      * @return \GuzzleHttp\Psr7\Response
      */
-    public function get($resource, $body);
+    public function get($resource, $body, $params);
 
     /**
      * Perform a POST request on the specified resource.
@@ -20,5 +20,5 @@ interface MethodContract
      * @param  string $body
      * @return \GuzzleHttp\Psr7\Response
      */
-    public function post($resource, $body);
+    public function post($resource, $body, $params);
 }
