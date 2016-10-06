@@ -133,7 +133,7 @@ class Connection implements LiteviewMethodContract
         $resource = trim($resource, '/').'/'.$this->username;
 
         foreach ($params as $param) {
-            $resource.='/'.$param;
+            $resource .= '/'.$param;
         }
 
         return new Request($method, $resource, [], $body);
