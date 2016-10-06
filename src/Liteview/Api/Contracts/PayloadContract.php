@@ -2,7 +2,7 @@
 
 namespace Liteview\Api\Contracts;
 
-interface ResourceContract
+interface PayloadContract
 {
     /**
      * Return an XML string representation of the object.
