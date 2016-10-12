@@ -5,6 +5,7 @@ namespace Liteview;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
 use Liteview\Api\Contracts\MethodContract as LiteviewMethodContract;
 
 class Connection implements LiteviewMethodContract
@@ -113,6 +114,8 @@ class Connection implements LiteviewMethodContract
         try {
             $response = $this->client->send($request);
         } catch (ClientException $e) {
+            $response = $e->getResponse();
+        } catch (ServerException $e) {
             $response = $e->getResponse();
         }
 
