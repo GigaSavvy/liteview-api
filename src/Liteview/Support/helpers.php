@@ -35,7 +35,7 @@ if (! function_exists('array_to_xml')) {
                     }
                 }
             } else {
-                $xml->addChild($element, $value);
+                $xml->addChild($element, htmlspecialchars($value));
             }
         }
 
